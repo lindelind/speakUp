@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="posts.css">
+    <script src="posts.js"></script>
+    <title>SpeakUp Inlägg</title>
+</head>
+<body>
+    <header>
+        <h1>SpeakUp</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Startsida</a></li>
+            <li><a href="#">Mina sidor</a></li>
+            <li><a href="#">Inlägg</a></li>
+            <li><a href="#">Chatt</a></li>
+            <li><a href="info.html">Information</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <table id="post-list">
+            <thead>
+                <tr>
+                    <th class="headline-table">Inläggsrubrik</th>
+                    <th class="headline-user">Postat av</th>
+                    <th class="headline-date">Trådstart Datum</th>
+                </tr>
+            </thead>
+        </table>
+    
+      <div class="create-post">
+        <form id="post-form">
+            <h1>Skapa inlägg</h1>
+                <td class="form-container">
+                    <label for="post-title">Rubrik:</label>
+                    <input type="text" id="post-title" required>
+                    <label for="post-user">Postat av:</label>
+                    <input type="text" id="post-user" required>
+                    <label for="post-text">Beskrivning:</label>
+                    <textarea id="post-text" required></textarea>
+                    <p id="error-msg"></p>
+                    <button type="button" id="post-button" onclick="submitPost()">Posta inlägg</button>
+                 
+                </td>
+        </form>
+      </div>  
+    </main>
+    
+
+    <footer>
+       <p>&copy; 2023 SpeakUp. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

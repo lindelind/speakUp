@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>SpeakUp</title>
+    
+</head>
+<body>
+    <header>
+        <h1>SpeakUp</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Mina sidor</a></li>
+            <li><a href="posts.html">Inlägg</a></li>
+            <li><a href="#">Chatt</a></li>
+            <li><a href="info.html">Information</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <div class="login-section">
+            <h2>Logga in</h2>
+            <form id="login-form">
+                <label for="username">Användarnamn:</label>
+                <input type="text" id="username" required>
+                <label for="password">Lösenord:</label>
+                <input type="password" id="password" placeholder="*********" required>
+                <button id="login">Logga in</button>
+            </form>
+        </div>
+
+        <div id="posts-container"></div>
+
+        <section class="featured-section">
+            <h2>Senaste inläggen:</h2>
+            <section class="popular-posts">
+                <div id="posts-card-1"></div>
+                <div id="posts-card-2"></div>        
+                <div id="posts-card-3"></div>
+            </section>
+
+            <h3><a href="posts.html">Gå till inläggssidan</a></>
+        </section>
+        <section class="news-section">
+            <h2>Nyheter</h2>
+            <section class="latest-news">
+                <div class="news-card">
+                    <h4 class="news-logo">Nyhet!</h4>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde soluta, ipsum iusto omnis
+                         eaque accusantium impedit rerum odit, recusandae necessitatibus sit. 
+                        Explicabo iusto officia ducimus neque, pariatur dolorem perspiciatis temporibus.
+                        Nu kan du lägga till kontakter på mina sidor och chatta med dina vänner privat.</p>
+                </div>
+                <div class="news-card">
+                    <h4 class="news-logo">Nyhet!</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo qui labore velit enim placeat, 
+                        modi dicta aut ipsa 
+                        fuga ipsam vitae minima odit quis iusto numquam!
+                         Amet maiores perferendis ipsa.Nu kan du lägga till kontakter på mina sidor och chatta med dina vänner privat.</p>
+                </div>
+            </section>
+        </section>    
+    </main>
+
+    <footer>
+        <p>&copy; 2023 SpeakUp. All rights reserved.</p>
+    </footer>
+
+
+    <script src="main.js"></script>
+</body>
+</html>

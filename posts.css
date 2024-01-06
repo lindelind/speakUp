@@ -1,0 +1,183 @@
+
+body {
+    font-family: monospace;
+    background-color: rgb(214, 135, 210);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+nav {
+    background-color: #555;
+    padding: 10px;
+    margin-bottom: 20px;
+   
+}
+
+
+ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+}
+
+nav a {
+    
+    color: #fff;
+}
+
+.post {
+    text-align: center;
+}
+
+table a {
+    color: #333;
+    font-weight: bold;
+}
+
+.headline-table, .headline-user, .headline-date {
+    font-size: 20px;
+    padding-bottom: 10px;
+    width: 400px;
+}
+
+
+table {
+    max-width: 80%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(227, 177, 224);
+    /* border: 1px solid #333; */
+    border-radius: 8px;
+    padding: 5px;
+}
+
+ td {
+    border: 1px solid rgb(214, 135, 210);
+    
+}
+
+
+
+form {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+input {
+    border-radius: 5px;
+    border: 1px solid rgb(227, 177, 224);
+}
+
+textarea {
+    border: 1px solid rgb(227, 177, 224);;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    height: 100px;
+    width: 270px;
+    
+}
+
+#error-msg {
+    color: rgb(227, 177, 224);
+    background-color: black;
+}
+
+#post-button {
+    font-family: monospace;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid rgb(227, 177, 224);
+    cursor: pointer;
+    margin-bottom: 70px;
+    background-color:rgb(227, 177, 224)
+}
+
+#post-button:hover {
+    background-color: rgb(214, 135, 210);
+    border: 1px solid black;
+}
+
+.delete-button {
+    font-family: monospace;
+    border-radius: 5px;
+    border: 1px solid rgb(227, 177, 224);
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    background-color: rgb(214, 135, 210)
+  }
+
+  .delete-button:hover{
+    background-color: rgb(227, 177, 224);
+    border: 1px solid black;
+  }
+  
+
+.form-container {
+    width: 100%;
+    max-width: 500px; 
+}
+
+footer {
+    margin-top: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+ 
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+   
+}
+
+#text-cell {
+    
+    display: none;
+    border: 1px solid rgb(214, 135, 210);
+    
+    
+}
+
+
+@media(max-width: 800px) {
+
+     .posts-card-3 {
+        display: none;
+    }
+
+}
+
+
+@media(max-width: 450px) {
+
+    .popular-posts {
+        display: block;
+    }
+
+}
