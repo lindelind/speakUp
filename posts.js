@@ -1,56 +1,65 @@
 
-// localStorage.clear();
-
 let postIdCounter = parseInt(localStorage.getItem('postIdCounter'));
 
-console.log(postIdCounter);
+if (isNaN(postIdCounter)) {
+    postIdCounter = 0; 
+}
+
+existingPosts = JSON.parse(localStorage.getItem("posts"));
+if (!Array.isArray(existingPosts)) {
+    existingPosts = [];
+}
+
+function submitPost() {
+  let errorMsg = document.getElementById("error-msg");
+  let postTitle = document.getElementById("post-title").value;
+  let postUser = document.getElementById("post-user").value;
+  let postText = document.getElementById("post-text").value;
+  let postDate = new Date().toLocaleString();
+
+  errorMsg.innerHTML = "Ditt inlägg är postat!";
+
+  let existingPosts = JSON.parse(localStorage.getItem("posts")) || [];
+
+  let postId = postIdCounter++; 
+  existingPosts.push({
+    id: postId,
+    title: postTitle,
+    user: postUser,
+    text: postText,
+    date: postDate,
+  });
+
+  if (postTitle === "" || postUser === "" || postText === "") {
+    errorMsg.innerHTML = "Fält får ej lämnas tomt";
+    return;
+  }
+
+  postTitle = document.getElementById("post-title").value = "";
+  postUser = document.getElementById("post-user").value = "";
+  postText = document.getElementById("post-text").value = "";
 
 
- function submitPost() {
-    let errorMsg = document.getElementById('error-msg');
-    let postTitle = document.getElementById("post-title").value;
-    let postUser = document.getElementById("post-user").value;
-    let postText = document.getElementById("post-text").value;
-    let postDate = new Date().toLocaleString();
+  localStorage.setItem("postIdCounter", postIdCounter);
+ 
+  localStorage.setItem("posts", JSON.stringify(existingPosts));
 
-    errorMsg.innerHTML = "Ditt inlägg är postat!";
-
-    let existingPosts = JSON.parse(localStorage.getItem("posts"));
-
-    let postId = postIdCounter++;
-    existingPosts.push({
-        id: postId,
-        title: postTitle,
-        user: postUser,
-        text: postText,
-        date: postDate,
-    });
-
-    if (postTitle === "" || postUser === "" || postText === ""){
-        errorMsg.innerHTML = "Fält får ej lämnas tomt";
-        return;
-
-    }
-
-    postTitle = document.getElementById("post-title").value = "";
-    postUser = document.getElementById("post-user").value = "";
-    postText = document.getElementById("post-text").value = "";
-     localStorage.setItem('postIdCounter', postIdCounter);
-
-
-    localStorage.setItem("posts", JSON.stringify(existingPosts));
-    updatePostList();
+  updatePostList();
 }
 
 function validatePost() {
-    if ( postTitle === ""){
-        document.getElementById('error-msg').innerHTML = "Får ej lämnas tomt";
-        return;
-    }
+  let postTitle = document.getElementById("post-title").value;
+
+  if (postTitle === "") {
+    document.getElementById("error-msg").innerHTML =
+      "Rubrik får ej lämnas tomt";
+    return;
+  }
 }
+
 function updatePostList() {
     var postList = document.getElementById("post-list");
-    var storedPosts = JSON.parse(localStorage.getItem("posts"));
+    var storedPosts = JSON.parse(localStorage.getItem("posts")) || [];
 
     postList.innerHTML =  `
     <thead>
@@ -62,8 +71,8 @@ function updatePostList() {
     </thead>
  
 `;
-
-    storedPosts.forEach(function(post) {
+    if (storedPosts.length > 0) {
+        storedPosts.forEach(function(post) {
         let newRow = postList.insertRow(-1);
         let titleCell = newRow.insertCell(0);
         let userCell = newRow.insertCell(1);
@@ -96,8 +105,7 @@ function updatePostList() {
             e.preventDefault();
             textCell.style.display = (textCell.style.display === "table-cell") ? "none" : "table-cell";
         });
-        
-    });
+    })}
 }
 
 

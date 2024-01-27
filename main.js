@@ -47,7 +47,7 @@ for (let i = 0; i < 3; i++) {
       let postText = e.target.parentElement.previousElementSibling;
       postText.style.display = (postText.style.display === "block") ? "none" : "block";
       
-      // Uppdatera endast texten, behåll övrig HTML-struktur
+    
       if (postText.style.display === "block") {
         readMore[i].innerHTML = `<a href="#">Läs mindre...</a>`;
       } else {
